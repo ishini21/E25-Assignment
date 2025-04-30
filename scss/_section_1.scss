@@ -1,0 +1,167 @@
+@use "sass:color";
+
+.section_1 {
+  font-family: $font-family;
+  background-color:$white;
+  padding: 0;
+  margin: 0;
+  display: block;
+  margin-top: -20px;
+ 
+  &::before,
+  &::after {
+    display: none;
+  }
+ 
+  .container {
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+    overflow: visible;
+  }
+ 
+  .grid {
+    display: grid;
+    margin: 0;
+    grid-template-columns: repeat(19, 1fr);
+    grid-template-rows: repeat(12, 1fr); 
+    gap: $spacing-xxs;
+    width: 100%;
+    height: 1000px; 
+    padding: 0;
+  }
+ 
+  .square {
+    background-color: $white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+
+  .left-columns {
+    grid-column: 1 / 4;
+    grid-row: 2 / 9; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: $spacing-xxs;
+  }
+ 
+  .left-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+ 
+  .right-columns {
+    grid-column: 17 / 20;
+    grid-row: 2 / 9; 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 10px;
+  }
+ 
+  .right-square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $white;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .center-area {
+    grid-column: 4 / 17;
+    grid-row: 2 / 9; 
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 480px;
+    height: 100%;
+    justify-self: center;
+    position: relative;
+    overflow: hidden;
+  }
+ 
+ 
+  .square img,
+  .left-square img,
+  .right-square img {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: $border-radius-md;
+  }
+ 
+  
+  .square:has(img),
+  .left-square:has(img),
+  .right-square:has(img) {
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px $shadow-color;
+  }
+  .heading_1{
+    color: $deep-blue;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: $font-family-base;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    line-height:  66px;
+  }
+
+  .heading_2 {
+    color: $deep-blue;
+    font-family: $font-family-base;
+    font-size: 20px;
+    max-width: 350px;
+    font-weight: $font-weight-normal;
+    line-height: 32px;
+    text-align: center; 
+    margin-left: auto;  
+    margin-right: auto;
+  }
+ 
+  .button {
+    width: 245px;
+    height: 45px;
+    padding: 10px 15px;
+    background-color: $pink;
+    color: $white;
+    border: none;
+    border-radius:$border-radius-sm;
+    cursor: pointer;
+    font-size:$font-size-base;
+    margin-top: 15px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    z-index: 2;
+   
+    &:hover {
+      background-color: color.scale($pink, $lightness: -10%);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.heading_2 + .button {
+  margin-top: 40px;
+}
