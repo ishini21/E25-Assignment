@@ -15,13 +15,6 @@ section {
   padding: 0;
 }
 
-section.image-gallery {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
 .section_1 {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   background-color: #ffffff;
